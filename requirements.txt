@@ -1,0 +1,5 @@
+PyMuPDF>=1.23.0
+PyYAML>=6.0
+fastmcp>=0.2.0
+typing-extensions>=4.0.0
+
