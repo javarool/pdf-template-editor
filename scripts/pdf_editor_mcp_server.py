@@ -29,7 +29,9 @@ app = FastMCP("PDF Template Editor MCP Server")
 
 def load_alias_mapping(pdf_path: str) -> Dict[str, str]:
     """Load alias mapping from YAML file next to PDF"""
-    base_name = os.path.splitext(pdf_path)[0]
+    # Convert to absolute path to handle relative paths correctly
+    abs_pdf_path = os.path.abspath(pdf_path)
+    base_name = os.path.splitext(abs_pdf_path)[0]
     alias_file = f"{base_name}.alias.yaml"
 
     if not os.path.exists(alias_file):
